@@ -1,803 +1,1089 @@
 <!DOCTYPE html>
 
 <html xmlns="https://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=9" />
-    <title>The 10th Euro-China Conference on Intelligent</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="css/shop-homepage.css" rel="stylesheet" />
-    <link href="css/bhoechieTab.css" rel="stylesheet" />
-    <link href="css/css.css" rel="stylesheet"/>
+	<head runat="server">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<title>The 10th Euro-China Conference on Intelligent</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+		<link href="css/shop-homepage.css" rel="stylesheet" />
+		<link href="css/bhoechieTab.css" rel="stylesheet" />
+		<link href="css/css.css" rel="stylesheet" />
 
-    <script src="js/angular.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>-->
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
     <script src="https://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
     <script src="https://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script>
-        $(document).ready(function () {
-            $("div.bhoechie-tab-menu>div.list-group>a").click(function (e) {
-                e.preventDefault();
-                $(this).siblings('a.active').removeClass("active");
-                $(this).addClass("active");
-                var index = $(this).index();
-                $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-                $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
-            });
-            $("div.bhoechie-tab-menu>ul.navbar-nav>li").click(function (e) {
-                e.preventDefault();
-                $(this).siblings('li.active').removeClass("active");
-                $(this).addClass("active");
-                var index = $(this).index();
-                //alert(index)
-                if(index>=1){
-                    $('.titlename').addClass("titlenamenone");
-                }
-                else{
-                    $('.titlename').removeClass("titlenamenone");
-                }
-                $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-                $("#bs-example-navbar-collapse-6").removeClass("in");
-                $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
-            });
+		<script>
+			$(document).ready(function() {
+				$("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+					e.preventDefault();
+					$(this).siblings('a.active').removeClass("active");
+					$(this).addClass("active");
+					var index = $(this).index();
+					$("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+					$("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+				});
+				$("div.bhoechie-tab-menu>ul.navbar-nav>li").click(function(e) {
+					e.preventDefault();
+					$(this).siblings('li.active').removeClass("active");
+					$(this).addClass("active");
+					var index = $(this).index();
+					//alert(index)
+					if (index >= 1) {
+						$('.titlename').addClass("titlenamenone");
+					} else {
+						$('.titlename').removeClass("titlenamenone");
+					}
+					$("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+					$("#bs-example-navbar-collapse-6").removeClass("in");
+					$("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+				});
 
-        });
-    </script>
+			});
+		</script>
 
-</head>
+	</head>
 
-<body background="img/background_image.png">
+	<body background="img/background_image.png">
 
-    <style>
-        a{
-            word-wrap: break-word;
-        }
-        .filedow{
-            color:white;
-            text-decoration: none;
-        }
-        .filedow:link {
-            color: white;
-            text-decoration: none;
-}
+		<style>
+			a {
+				word-wrap: break-word;
+			}
 
-/* visited link */
-.filedow:visited {
-    color: white;
-    text-decoration: none;
-}
+			.filedow {
+				color: white;
+				text-decoration: none;
+			}
 
-/* mouse over link */
-.filedow:hover {
-    color: white;
-    text-decoration: none;
-}
+			.filedow:link {
+				color: white;
+				text-decoration: none;
+			}
 
-/* selected link */
-.filedow:active {
-  color: white;
-  text-decoration: none;
-}
-        body{
-            font-family:"Times New Roman";
-            color:black;
-        }
-        p{
-            text-align:left;
-        }
-        img {
-            max-width: 100%;
-            max-height: 100%;
-        }
+			/* visited link */
+			.filedow:visited {
+				color: white;
+				text-decoration: none;
+			}
 
-        .list-group li {
-            border: 0 none;
-            background-color: transparent;
-        }
+			/* mouse over link */
+			.filedow:hover {
+				color: white;
+				text-decoration: none;
+			}
 
-        div.bhoechie-tab-content {
-            background-color: transparent;
-            padding-right: 30px;
-        }
+			/* selected link */
+			.filedow:active {
+				color: white;
+				text-decoration: none;
+			}
 
-        div p {
-            text-align: left;
-        }
+			body {
+				font-family: "Times New Roman";
+				color: black;
+			}
 
-        div li {
-            text-align: left;
-            font-weight: lighter;
-        }
+			p {
+				text-align: left;
+			}
 
-        h3 {
-            font-weight: bold;
-        }
+			img {
+				max-width: 100%;
+				max-height: 100%;
+			}
 
-        .underlineBlue {
-            text-decoration: underline;
-            color: blue;
-        }
+			.list-group li {
+				border: 0 none;
+				background-color: transparent;
+			}
 
-        .CommitteeTitle {
-            color: blue;
-        }
+			div.bhoechie-tab-content {
+				background-color: transparent;
+				padding-right: 30px;
+			}
 
-        img.image-resize {
-            width: 100%;
-        }
+			div p {
+				text-align: left;
+			}
 
-        ul .list-group-item {
-            padding: 0px;
-        }
-        .auto-style86 {
-            height: 101px;
-        }
-        .auto-style87 {
-            height: 34px;
-            font-size: small;
-        }
-        .auto-style88 {
-            color: #FF0000;
-        }
-        .auto-style89 {
-            font-weight: bold;
-        }
-        .auto-style90 {
-            font-size: small;
-        }
-        .auto-style91 {
-            font-size: small;
-            font-weight: bold;
-        }
-        .auto-style92 {
-            font-size: small;
-            font-weight: bold;
-            text-align: center;
-            width: 137px;
-        }
-        .auto-style93 {
-            height: 42px;
-        }
-        .auto-style94 {
-            font-size: small;
-            font-weight: bold;
-            text-align: center;
-            width: 172px;
-        }
-        .auto-style95 {
-            font-size: small;
-            width: 172px;
-        }
-        .auto-style96 {
-            height: 34px;
-            font-size: small;
-            width: 172px;
-        }
-        .auto-style98 {
-            font-size: small;
-            font-weight: bold;
-            width: 142px;
-        }
-        .auto-style99 {
-            font-size: small;
-            width: 142px;
-        }
-        .auto-style100 {
-            font-size: small;
-            width: 137px;
-        }
-        .titlenamenone{
-            display: none;
-        }
-        @media (min-width: 768px) {
-            .navbar-fixed-top{
-                display: none;
-            }
-            .fimg{
-                width: 10%;
-            }
-            .navtitle{
-                display:initial;
-            }
-            .titlelogo{
-                display:initial;
-            }
-            .footerlogo{
-                display:initial;
-            }
-            .tiCarousel{
-                display:initial;
-            }
-        }
-        @media (max-width: 768px) {
-            .tiCarousel{
-                display: none;
-            }
-            .navbar-fixed-top{
-                display:initial;
-            }
-            .titlelogo{
-                display: none;
-            }
-            .text-info{
-                font-size: 14pt;
-            }
-            .fimg{
-                width: 10%;
-            }
-            body { padding-top: 50px; }
-            .navtitle{
-                display: none;
-            }
-            .footerlogo{
-                display:none;
-            }
-        }
-    </style>
+			div li {
+				text-align: left;
+				font-weight: lighter;
+			}
 
-    <form id="form1" runat="server">
-        <div class="container" style="background-color: rgba(255, 255, 255)">
+			h3 {
+				font-weight: bold;
+			}
 
-            <div class="container">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <img src="img/ECC2026.png" alt="" class="titlelogo" />
-                </div>
-            </div>
+			.underlineBlue {
+				text-decoration: underline;
+				color: blue;
+			}
 
-            <div class="row titlename" style="display: flexbox /*flex*/; margin-top: 5px">
-                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                    <!-- <h3 class="text-info" style="font-weight: bold">The 21st International Conference on Intelligent Information Hiding and Multimedia Signal Processing (IIHMSP 2025)</h3> -->
-                    <!-- <h3 class="text-info" style="font-weight: bold">The 10th Euro-China Conference on Intelligent Data Analysis and Applications (ECC 2026)</h3> -->
-                    <h3 class="text-info" style="font-weight: bold"><span style="color: rgba(192,0,0,1)">September 2026</span>,
-                        <span style="color: rgba(0,0,255,1)">Wuxi,China</span></h3>
-                </div>
-            </div>
-			
-            <hr class="titlename" style="background: #0563C1; border: 0; height: 3px" />
-            <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#">ECC 2026</a>
-                        <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <!--<a href="#" class="navbar-brand">Brand</a> -->
-                    </div>
-                    <div class="collapse navbar-collapse bhoechie-tab-menu" id="bs-example-navbar-collapse-6">
-                        <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href="#">Home</a>
-                            </li>
-                            <li>
-                                <a href="#">Call for Papers</a>
-                            </li>
-                            <li>
-                                <a href="#">Paper Submission </a>
-                            </li>
-                            <li>
-                                <a href="#">Special Session Submission</a>
-                            </li>
-                            <li>
-                                <a href="#">Important Dates</a>
-                            </li>
-                            <li>
-                                <a href="#">Sponsors</a>
-                            </li>
-							<li>
-							    <a href="#">Organizing Committee</a>
-							</li>
-                           <li>
-                               <a href="#">Keynote Speakers</a>
-                           </li>
-                            
-                            <li>
-                                <a href="#">Conference History</a>
-                            </li> 
-							<li>
-                                <a href="#">Conference Venue</a>
-                            </li> 
-							<li>
-                                <a href="#">Conference Program</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <div class="row" style="margin-top: 30px; margin-left: 5px">
-                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-8 col-lg-offset-0 col-md-offset-0 col-sm-offset-0 col-xs-offset-2 bhoechie-tab-menu">
-                    <div class="navtitle list-group">
-                        <a href="#" class="list-group-item list-group-item-info active">Home</a>
-                        <a href="#" class="list-group-item list-group-item-info">Call for Papers</a>
-                        <a href="#" class="list-group-item list-group-item-info">Paper Submission</a>
-                        <a href="#" class="list-group-item list-group-item-info">Important Dates</a>
-						<a href="#" class="list-group-item list-group-item-info">Sponsors</a>
-						<a href="#" class="list-group-item list-group-item-info">Organizing Committee</a>
-						<a href="#" class="list-group-item list-group-item-info">Keynote Speakers</a>
-						<a href="#" class="list-group-item list-group-item-info">Conference History</a>
-						<a href="#" class="list-group-item list-group-item-info">Conference Venue</a>
-						<a href="#" class="list-group-item list-group-item-info">Conference Program</a>
-                    </div>
-                </div>
+			.CommitteeTitle {
+				color: blue;
+			}
 
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-lg-offset-1 col-md-offset-0 col-sm-offset-0 col-xs-offset-0 bhoechie-tab col-sm-fontsize-xxl" style="font-size: large">
+			img.image-resize {
+				width: 100%;
+			}
 
-                    <div class="bhoechie-tab-content active">
-                        <div class="row">
-                            <div class="text-center">
-                                <h1><b><font color="green">Welcome to ECC 2026</font></b></h1>
-                            </div>
-                            <div>
-                               <hr style="background: gray; border: 0; height: 3px" />
-                                <p>
-                                    It is our greatest pleasure to welcome you to The 10th Euro-China Conference on Intelligent Data Analysis and Applications (<b>ECC 2026</b>), hosted by <b>Wuxi University</b>, Wuxi , China. The conference will be held from <b>DATE</b>, 2026 to <b>DATE</b>, 2026 at the <b>Wuxi University, No.333 Xishan Avenue, Wuxi, Jiangsu, China</b>, <b>Wuxi</b>, <b>China</b>. ECC 2026, hosted by VSB-Technical University Ostrava and Wuxi University , is the 10th Euro-China Conference on Intelligent Data Analysis and Applications. The aim of this conference is to provide an internationally respected forum for scientific research in the broad area of intelligent data analysis, computational intelligence, signal processing, and all associated applications of AIs. We sincerely invite submissions of papers presenting high-quality original research and development related to the following topics.
-                                </p>
-                                
-                                <h3>Contact Information:</h3>
-                                <p>
-                                    For queries related to the paper status and program, please contact:
-                                    <br />
-                                    <a href="mailto:iihmsp2025pcs@gmail.com?Subject=Hello%20again" style="font-style: italic" target="_blank">Name (Email)</a><br />
-                                    For questions related to registration, local information, and services, please contact:
-                                    <br />
-                                    <a href="mailto:iihmsp2025@gmail.com?Subject=Hello%20again" style="font-style: italic" target="_blank">Wenmeng Zhang (struggle202109@163.com)</a>
-                                </p>
+			ul .list-group-item {
+				padding: 0px;
+			}
 
-                                <h3>Important Dates:</h3>
-                                <table class="table" style="width:auto; font-family:Arial, Helvetica, sans-serif">
-                                    <tr>
-                                        <td>Full Paper Submission Deadline:</td>
-                                        <td>
-                                             <span style="color:blue">September  20, 2026</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Notification of Acceptance:</td>
-                                        <td>
-                                             <span style="color:blue">September  20, 2026</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Submission Deadline for Revised Papers:</td>
-                                        <td>
-                                             <span style="color:blue">September  20, 2026</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Registration Deadline:</td>
-                                        <td>
-                                           <span style="color:blue">September  20, 2026</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Conference Date:</td>
-                                        <td><span style="color:blue">September  20, 2026</span></td>
-                                    </tr>
-                                </table>
-                                <p>
-                                </p>
-                               
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bhoechie-tab-content">
-                        <div class="row">
-                            <div class="text-center">
-                                <h1><b><font color="red">Call for paper</font></b></h1>
-                            </div>
-                            <hr style="background: gray; border: 0; height: 3px" />
-                            <p>
-                                The 10th Euro-China Conference on Intelligent Data Analysis and Applications (<B>ECC 2026</B>) will be hosted by <b>Wuxi University</b> , <b>Wuxi</b>, <b>China</b>, on <b>DATE</b>.
-                                The venue location is the <b>Wuxi University, No.333 Xishan Avenue,</b> in Wuxi, China.
-                                The conference provides a forum for researchers, engineers, and scientists to discuss information hiding, multimedia signal processing, the application of artificial intelligence in multi-media and signal processing,
-                                and information technology to exchange the latest research outcomes. Multimedia technologies facilitate the creation of global information infrastructure for acquiring, storing, and communicating data in different forms.
-                                The proliferation of multimedia applications raises challenges such as multimedia security and privacy, big data in multimedia, and intelligence in multimedia processing.
-                                This conference was established in Melbourne, Australia in 2005 and was subsequently held in USA, Taiwan, Germany, China, Greece, Australia, Vietnam, Korea, and Japan from 2006 to 2025. <br>
-                                
-                            </p>
+			.auto-style86 {
+				height: 101px;
+			}
 
-                            <ul class="list-group">
-                                <li class="list-unstyled" style="font-weight: bold">
-                                            <ul class="list-group" style="margin-left: 15px"><B>Topics</B> of <B>ECC 2026</B> interest include, (but are not limited to) the following:
-                                                <li class="list-group-item">-Machine Learning</li>
-                                                <li class="list-group-item">-Signal Control (Wired & Wireless)</li>
-                                                <li class="list-group-item">-Information Hiding</li>
-                                                <li class="list-group-item">-Computational Intelligence</li>
-                                                <li class="list-group-item">-Knowledge-based Systems</li>
-                                                <li class="list-group-item">-Granular Computing</li>
-                                                <li class="list-group-item">-Intelligent Applications</li>
-                                                <li class="list-group-item">-Bioinformatics</li>
-                                                <li class="list-group-item">-Information Retrieval and Integration</li>
-                                                <li class="list-group-item">-Robotics and Control</li>
-                                                <li class="list-group-item">-Intelligent Control</li>
-                                                <li class="list-group-item">-Fuzzy Systems</li>
-                                                <li class="list-group-item">-Databases and Data Mining</li>
-                                                <li class="list-group-item">-Agents</li>
-                                                <li class="list-group-item">-Modeling and Visualization</li>
-                                                <li class="list-group-item">-Social Networking</li>
-                                                <li class="list-group-item">-Signal Analysis and Visualization</li>
-                                                <li class="list-group-item">-Web Intelligence</li>
-                                                <li class="list-group-item">-Signal Mining and Data Fusion</li>
-                                                <li class="list-group-item">-Cloud Computing</li>
-                                                <li class="list-group-item">-Multimedia Sensing and Sensory Systems</li>
-                                                <li class="list-group-item">-E-Learning</li>
-                                                <li class="list-group-item">-Watermarking</li>
-                                                <li class="list-group-item">-Expert Systems</li>
-                                                <li class="list-group-item">-Cryptography and Cryptanalysis</li>
-                                                <li class="list-group-item">-Other topics related to computer science</li>
-                                            </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="bhoechie-tab-content">
-                        <div class="row">
-                            <div class="text-center">
-                                <h1><b><font color="red">Paper Submission</font></b></h1>
-                            </div>
-                            <hr style="background: gray; border: 0; height: 3px" />
-                            <blockquote style="border: none;">
-                                <p>Manuscripts should be provided according to the author guidelines given at the link  <a href="http://www.springer.com/series/8767"> author guidelines</a> where you can find the necessary styles and information. The template for ECC 2026 follows the template <a href="https://www.springer.com/gp/authors-editors/conference-proceedings/conference-proceedings-guidelines">Springer template files</a> for the book series.
-                                </p>
-                                <p>The paper length is minum 10 pages for the regular paper. The template for ECC 2026 follows the same template for the book series: below.</p>
-                                <p>Prospective authors are encouraged to submit a full paper for review before Sep 10, 2026, in PDF or Word format. Each paper should be written in English. Your paper must be formatted according to the <a href="https://www.springer.com/gp/authors-editors/conference-proceedings/conference-proceedings-guidelines">Springer template files</a>.</p>
-                                <p>For those who are not familiar with the CMT system, you can contact <a href="mailto:struggle202109@163.com">struggle202109@163.com</a>.</p>
-                          
-                             <span><h3>Instructions for Paper Submission:</h3></span>
-                            <ul>
-                                <li>We are pleased to announce that paper submission for ECC 2026 will be managed through the Microsoft Conference Management Toolkit (CMT) system. Kindly follow the instructions below to register and submit your paper.</li>
-                            </ul>
-							
-							<span><FONT color=black>&#9679;&nbsp;<b>Step 1: Register on CMT</FONT>:</b></span>
-							 <p>Before submitting your paper, you must create an account on the CMT platform:</p>
-							 <ol>
-							     <li>Visit the CMT registration page: <a href="https://cmt3.research.microsoft.com/">Register Here</a>.</li>
-							     <li>Click on "Register" in the top-right corner of the page.</li>
-							     <li>Fill in the required details, including your email address, name, and affiliation.</li>
-							     <li>Submit the registration form and verify your email to activate your account.</li>
-							 </ol>
-							 <p>If you already have a CMT account, you can skip this step.</p>
-							 
-							 <span><FONT color=black>&#9679;&nbsp;<b>Step 2: Submit Your Paper</FONT>:</b></span>
-							  <p>Once registered, follow these steps to submit your paper:</p>
-							  <ol>
-							      <li>Log in to your CMT account.</li>
-							      <li>Go to the ECC 2026 submission site: <a href="https://cmt3.research.microsoft.com/ECC2026">Paper Submission Link</a>.</li>
-							      <li>Complete the required fields, upload your paper, and confirm your submission.</li>
-							  </ol>
-							  <p>Please ensure that your submission adheres to the guidelines provided on the ECC 2026 conference website.</p>
-							  
-							  <span><FONT color=black>&#9679;&nbsp;<b>Step 3: Registration</FONT>:</b></span>
-							   <p>The registration process consists of two steps: completing the form then you will get the <strong>payment link via email</strong>. The email link redirected to our secure payment portal at <a href="https://eps.vsb.cz/">PAY</a> for fast and secure payment by credit card.</p>
-							   <ol>
-							       <li>
-							           <strong>Registration Form:</strong> 
-							           <a href="https://forms.office.com/e/ut9XGVMfB7">Complete the Registration Form</a>  PAY Form
-							           <p>For ALL authors and participants, please complete the registration form above and you will receive a payment link via email. At least one author of each accepted paper must register and pay the fee by <strong>June 15, 2026</strong>. The registration fee is <strong>$550 (12,000 CZK or 480 EUR)</strong> per paper . Discounts may be available for those with funding constraints, please write to <a href="mailto:meenu.singh@vsb.cz">meenu.singh@vsb.cz</a>.</p>
-							           <p>The registration fee includes:</p>
-							           <ul>
-							               <li>Conference proceedings</li>
-							               <li>Conference program guide</li>
-							               <li>Access to all technical sessions</li>
-							               <li>Lunches and dinners</li>
-							               <li>Coffee breaks</li>
-							               <li>Conference gifts</li>
-							           </ul>
-							           <p><em>Note:</em> Travel and lodging expenses are not included.</p>
-							       </li>
-							   </ol>
-							   <p>Please fill out the registration form above.</p>
-							   
-							 
-                            </blockquote>
-                            <h3><b><font color="green">Publication</font></b></h3>
-                            <blockquote style="border: none;">
-                            <p>Notice:</p>
-                            <ol>
-                                <li> Accepted and presented papers will be published in the book series of Smart Innovation, Systems and Technologies by Springer. Normally, papers in this series are indexed by EI and Scopus.</li>
-                             <img src="img/PaperPublication.png" alt="PaperPublication" style="max-width: 400px;">
-                                <li>The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.</li>
-                            </ol>
-                        </div>
-                    </div>
+			.auto-style87 {
+				height: 34px;
+				font-size: small;
+			}
 
-                    
-                    <div class="bhoechie-tab-content">
-                        <div class="row">
-                            <div class="text-center">
-                                <h1><b><font color="green">Important Dates</font></b></h1>
-                            </div>
-                            <hr style="background: gray; border: 0; height: 3px" />
-                            <table class="table" style="width: auto; font-family:Helvetica">
-                                    <tr>
-                                        <td>Full Paper Submission Deadline:</td>
-                                        <td>
-                                             <span style="color:blue">September  15, 2026</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Notification of Acceptance:</td>
-                                        <td>
-                                            <span style="color:blue">September  15, 2026</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Submission Deadline for Revised Papers:</td>
-                                       <td>
-                                            <span style="color:blue">September  15, 2026</span>
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Registration Deadline:</td>
-                                       <td>
-                                            <span style="color:blue">September  15, 2026</span>
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Conference Date:</td>
-                                        <td>
-                                             <span style="color:blue">September  15, 2026</span>
-                                        </td>
-                                    </tr>
-                            </table>
-                        </div>
-                    </div>
-										
-					<div class="bhoechie-tab-content">
-					
-					    <div class="row" >
-					        <div class="text-center">
-					            <h1><b><font color="green">Our Sponsors</font></b></h1>
-					        </div>
-					        <hr style="background: gray; border: 0; height: 3px" />
-					        <ul class="table-condensed" style="font-size: large">
-					            <li class="list-unstyled" style="margin: 20px">
-					                <a href="https://web.cyut.edu.tw/bin/home.php?Lang=en" target="_blank">
-					                    <img src="img/vsb.jpeg" alt="" style="width: 120px" /></a>
-					                 VSB-Technical University of Ostrava
-					            </li>
-					            <li class="list-unstyled" style="margin: 20px">
-					                <a href="https://isrc.asia.edu.tw/ssci/" target="_blank">
-					                    <img src="img/Wuxi University logo.png" alt="" style="width: 100px" /></a>
-					                    Wuxi University 
-					            </li>
-					        </ul>
-					    </div>
+			.auto-style88 {
+				color: #FF0000;
+			}
+
+			.auto-style89 {
+				font-weight: bold;
+			}
+
+			.auto-style90 {
+				font-size: small;
+			}
+
+			.auto-style91 {
+				font-size: small;
+				font-weight: bold;
+			}
+
+			.auto-style92 {
+				font-size: small;
+				font-weight: bold;
+				text-align: center;
+				width: 137px;
+			}
+
+			.auto-style93 {
+				height: 42px;
+			}
+
+			.auto-style94 {
+				font-size: small;
+				font-weight: bold;
+				text-align: center;
+				width: 172px;
+			}
+
+			.auto-style95 {
+				font-size: small;
+				width: 172px;
+			}
+
+			.auto-style96 {
+				height: 34px;
+				font-size: small;
+				width: 172px;
+			}
+
+			.auto-style98 {
+				font-size: small;
+				font-weight: bold;
+				width: 142px;
+			}
+
+			.auto-style99 {
+				font-size: small;
+				width: 142px;
+			}
+
+			.auto-style100 {
+				font-size: small;
+				width: 137px;
+			}
+
+			.titlenamenone {
+				display: none;
+			}
+
+			@media (min-width: 768px) {
+				.navbar-fixed-top {
+					display: none;
+				}
+
+				.fimg {
+					width: 10%;
+				}
+
+				.navtitle {
+					display: initial;
+				}
+
+				.titlelogo {
+					display: initial;
+				}
+
+				.footerlogo {
+					display: initial;
+				}
+
+				.tiCarousel {
+					display: initial;
+				}
+			}
+
+			@media (max-width: 768px) {
+				.tiCarousel {
+					display: none;
+				}
+
+				.navbar-fixed-top {
+					display: initial;
+				}
+
+				.titlelogo {
+					display: none;
+				}
+
+				.text-info {
+					font-size: 14pt;
+				}
+
+				.fimg {
+					width: 10%;
+				}
+
+				body {
+					padding-top: 50px;
+				}
+
+				.navtitle {
+					display: none;
+				}
+
+				.footerlogo {
+					display: none;
+				}
+			}
+		</style>
+
+		<form id="form1" runat="server">
+			<div class="container" style="background-color: rgba(255, 255, 255)">
+
+				<div class="container">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<img src="img/ECC2026.png" alt="" class="titlelogo" />
+					</div>
+				</div>
+
+				<div class="row titlename" style="display: flexbox /*flex*/; margin-top: 5px">
+					<div class="col-md-12 col-sm-12 col-xs-12 text-center">
+						<!-- <h3 class="text-info" style="font-weight: bold">The 21st International Conference on Intelligent Information Hiding and Multimedia Signal Processing (IIHMSP 2025)</h3> -->
+						<!-- <h3 class="text-info" style="font-weight: bold">The 10th Euro-China Conference on Intelligent Data Analysis and Applications (ECC 2026)</h3> -->
+						<h3 class="text-info" style="font-weight: bold"><span style="color: rgba(192,0,0,1)">September 05
+								2026</span>,
+							<span style="color: rgba(0,0,255,1)">Wuxi,China</span>
+						</h3>
+					</div>
+				</div>
+
+				<hr class="titlename" style="background: #0563C1; border: 0; height: 3px" />
+				<nav class="navbar navbar-default navbar-fixed-top">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<a class="navbar-brand" href="#">ECC 2026</a>
+							<button type="button" class="collapsed navbar-toggle" data-toggle="collapse"
+								data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<!--<a href="#" class="navbar-brand">Brand</a> -->
+						</div>
+						<div class="collapse navbar-collapse bhoechie-tab-menu" id="bs-example-navbar-collapse-6">
+							<ul class="nav navbar-nav">
+								<li class="active">
+									<a href="#">Home</a>
+								</li>
+								<li>
+									<a href="#">Call for Papers</a>
+								</li>
+								<li>
+									<a href="#">Paper Submission </a>
+								</li>
+								<li>
+									<a href="#">Special Session Submission</a>
+								</li>
+								<li>
+									<a href="#">Important Dates</a>
+								</li>
+								<li>
+									<a href="#">Sponsors</a>
+								</li>
+								<li>
+									<a href="#">Organizing Committee</a>
+								</li>
+								<li>
+									<a href="#">Keynote Speakers</a>
+								</li>
+
+								<li>
+									<a href="#">Conference History</a>
+								</li>
+								<li>
+									<a href="#">Conference Venue</a>
+								</li>
+								<li>
+									<a href="#">Conference Program</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+				<div class="row" style="margin-top: 30px; margin-left: 5px">
+					<div
+						class="col-lg-2 col-md-3 col-sm-3 col-xs-8 col-lg-offset-0 col-md-offset-0 col-sm-offset-0 col-xs-offset-2 bhoechie-tab-menu">
+						<div class="navtitle list-group">
+							<a href="#" class="list-group-item list-group-item-info active">Home</a>
+							<a href="#" class="list-group-item list-group-item-info">Call for Papers</a>
+							<a href="#" class="list-group-item list-group-item-info">Paper Submission</a>
+							<a href="#" class="list-group-item list-group-item-info">Important Dates</a>
+							<a href="#" class="list-group-item list-group-item-info">Sponsors</a>
+							<a href="#" class="list-group-item list-group-item-info">Organizing Committee</a>
+							<a href="#" class="list-group-item list-group-item-info">Keynote Speakers</a>
+							<a href="#" class="list-group-item list-group-item-info">Conference History</a>
+							<a href="#" class="list-group-item list-group-item-info">Conference Venue</a>
+							<a href="#" class="list-group-item list-group-item-info">Conference Program</a>
+						</div>
 					</div>
 
-                    <div class="bhoechie-tab-content">
-                        <div class="row">
-                            <div class="text-center">
-                                <h1><b><font color="green">Organizing Committee</font></b></h1>
-                            </div>
-                            <hr style="background: gray; border: 0; height: 3px" />
-                            <span class="CommitteeTitle">Honorary Chairs</span>
-                            <ol>
-                                <li class="list-unstyled">Jeng-Shyang Pan, Nanjing University of Information Science & Technology, China</li>
-                                
-                            </ol>
-                    
-                            <span class="CommitteeTitle">Conference Founders</span>
-                            <ol>
-                                <li class="list-unstyled">Milan Adamek, Tomas Bata University in Zlin, Czech Republic</li>
-                            </ol>
-                    
-                            <span class="CommitteeTitle">Program Committee Chairs</span>
-                            <ol>
-                                <li class="list-unstyled">Yanfei Sun (Wuxi University, China)</li>
-                            </ol>
-                    
-                            <span class="CommitteeTitle">Local Organizing Chair</span>
-                            <ol>
-                                <li class="list-unstyled">Ming Zhao (Wuxi University, China)</li>
-                            </ol>
-                    
-                            <span class="CommitteeTitle">Publication Chairs</span>
-                            <ol>
-                               
-                            
-                            </ol>
-                    
-                            <span class="CommitteeTitle">TPC Members</span>
-                            <ol>
-                                <li class="list-unstyled">Wenjie Liu (Nanjing University of Information Science & Technology, China)</li>
-                                <li class="list-unstyled">Hongwei Sun (Heilongjiang University, China)</li>
-                                <li class="list-unstyled">Binbin Cai (Fujian Normal University, China)</li>
-								<li class="list-unstyled">Shangdong Liu (Nanjing University of Posts and Telecommunications, China)</li>
-								<li class="list-unstyled">Jing Sun (Nanjing University of Posts and Telecommunications, China)</li>
-								<li class="list-unstyled">Haichang Yao (Nanjing Vocational University of Industry Technology, China)</li>
-								<li class="list-unstyled">Kanghuai Liu (Nanyang Technological University, China)</li>
-								<li class="list-unstyled">Zhiyu Chen (Xuzhou University of Technology, China)</li>
-								<li class="list-unstyled">Yujian Feng (Jiangsu University of Technology, China)</li>
-								<li class="list-unstyled">Shuai You (Wuhan University, China)</li>
-                                <li class="list-unstyled">Varun Ojha (VSB-Technical University of Ostrava, Czech Republic)</li>
-                                <li class="list-unstyled">Vaclav Snasel (VSB-Technical University of Ostrava, Czech Republic)</li>
-                                <li class="list-unstyled">Roman Senkeric (Tomas Bata University in Zlin, Czech Republic)</li>
-                                <li class="list-unstyled">Jana Nowakova (VSB-Technical University of Ostrava, Czech Republic)</li>
-                                <li class="list-unstyled">Ivan Kotuliak (Slovak University of Technology, Slovak Republic)</li>
-                                <li class="list-unstyled">Pavel Kromer (VSB-Technical University of Ostrava, Czech Republic)</li>
-                                <li class="list-unstyled">Zdenko Bobovsky (VSB-Technical University of Ostrava, Czech Republic)</li>
-                                <li class="list-unstyled">Lingping Kong (VSB-Technical University of Ostrava, Czech Republic)</li>
-                                <li class="list-unstyled">Linlin Tang (Harbin Institute of Technology, Shenzhen, China)</li>
-                            </ol>
-                    
-                            <span class="CommitteeTitle">Program Committee Chairs</span>
-                            <ol>
-                                <li class="list-unstyled">Yimu Ji (Nanjing University of Posts and Telecommunications, China)</li>
-                                
-                            </ol>
-                        </div>
-                    </div>
-                    <div class="bhoechie-tab-content">
-                        <div class="row">
-                            <div class="text-center">
-                                <h1><b>Keynote Speakers</b></h1>
-                            </div>
-                            <hr style="background: gray; border: 0; height: 3px" />
-                            <table class="table table-bordered text-center">
-                                <tbody>
-                                    <tr>
-                                        <td style="width: 40%;">
-                                            <img src="Keynote/Mark Liao.jpg" alt="" class="img-rounded" style="width: 50%;margin-top: 5%;" />
-                                            <label>
-                                                Distinguished Research Fellow (Institute of Information Science, Academia Sinica, Taiwan)
-                                            </label>
-                                            <label>
-                                                H. Y. Mark Liao
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <p><b>Topic:(Under invitation)</b></p>
-                                            <hr />
-                                            <p></p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-								
-                                <tbody>
-                                    <tr>
-                                        <td style="width: 40%;">
-                                            <img src="Keynote/James Yu.jpg" alt="" class="img-rounded" style="width: 50%;margin-top: 5%;" />
-                                            <label>
-                                                Professor (DePaul University, USA)
-                                            </label>
-                                            <label>
-                                                James Yu
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <p><b>Topic: Challenges of Applying Artificial Intelligence in Cybersecurity With Focus on Information Hiding</b></p>
-                                            <hr />
-                                            <p></p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-					
-                    <div class="bhoechie-tab-content">
-                        <div class="row">
-                            <div class="text-center">
-                                <h1><b><font color="green">Conference History</font></b></h1>
-                            </div>
-                            <hr style="background: gray; border: 0; height: 3px" />
-                            <span class="CommitteeTitle">ECC 2024</span>
-                            <ol>
-                                <li class="list-unstyled">The 8th Euro-China Conference on Intelligent Data Analysis and Applications (ECC 2024) was a successful event that brought together researchers, professionals, and enthusiasts from around the world. Below are some highlights from last year’s conference.</li>
-								<li class="list-unstyled">ECC2024 International Conference has been successfully held in Xiamen China (2024.12.12)2024-12-12</li>
-                            </ol>
-                    
-                            <span class="CommitteeTitle">ECC 2025</span>
-                            <ol>
-                                <li class="list-unstyled">Milan Adamek, Tomas Bata University in Zlin, Czech Republic</li>
-                            </ol>
-                        </div>
-                    </div>
-                    <div class="bhoechie-tab-content">
-                        <div class="row">
-                            <h1><span style="color:red"><b>Conference Venue</b></span></h1>
-                            <br />
-                           <!--<p>Under Construction...</p>-->
-                             <p style="text-align:justify">
-                                The conference ECC2026 will be held at <b>Wuxi University,<font color="green"> Binjiang Auditorium</font></a></b>, <b>Wuxi</b>, China.
-                                
-                            </p>
-                          
-                            <p>
-                                <img src="img/VenueMap.png" class="img-response" />
-                            </p>
-                           
-                            <h3><span style="color:red">About Wuxi</span></h3>
-                            <br /> 
-                            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDruza7GdjKA4lxtVaZ-39mxaVks7d-rq0
+					<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-lg-offset-1 col-md-offset-0 col-sm-offset-0 col-xs-offset-0 bhoechie-tab col-sm-fontsize-xxl"
+						style="font-size: large">
+
+						<div class="bhoechie-tab-content active">
+							<div class="row">
+								<div class="text-center">
+									<h1><b>
+											<font color="green">Welcome to ECC 2026</font>
+										</b></h1>
+								</div>
+								<div>
+									<hr style="background: gray; border: 0; height: 3px" />
+									<p style="text-align: justify; hyphens: auto;" lang="en">
+										It is our greatest pleasure to welcome you to The 10th Euro-China Conference on
+										Intelligent Data Analysis and Applications (<b>ECC 2026</b>), hosted by <b>Wuxi
+											University</b>, Wuxi , China. The conference will be held from <b>September 04</b>,
+										2026 to <b>September 06 </b>, 2026 at the <b>Wuxi University, No.333 Xishan Avenue, Wuxi,
+											Jiangsu, China</b>, <b>Wuxi</b>, <b>China</b>. ECC 2026, hosted by
+										VSB-Technical University Ostrava and Wuxi University , is the 10th Euro-China
+										Conference on Intelligent Data Analysis and Applications. The aim of this
+										conference is to provide an internationally respected forum for scientific
+										research in the broad area of intelligent data analysis, computational
+										intelligence, signal processing, and all associated applications of AIs. We
+										sincerely invite submissions of papers presenting high-quality original research
+										and development related to the following topics.
+									</p>
+
+									<h3>Contact Information:</h3>
+									<p>
+										For queries related to the paper status and program, please contact:
+										<br />
+										<a href="mailto:iihmsp2025pcs@gmail.com?Subject=Hello%20again"
+											style="font-style: italic" target="_blank">Name (Email)</a><br />
+										For questions related to registration, local information, and services, please
+										contact:
+										<br />
+										<a href="mailto:iihmsp2025@gmail.com?Subject=Hello%20again"
+											style="font-style: italic" target="_blank">Wenmeng Zhang
+											(struggle202109@163.com)</a>
+									</p>
+
+									<h3>Important Dates:</h3>
+									<table class="table" style="width:auto; font-family:Arial, Helvetica, sans-serif">
+										<tr>
+											<td>Full Paper Submission Deadline:</td>
+											<td>
+												<span style="color:blue">September 01, 2026</span>
+											</td>
+										</tr>
+										<tr>
+											<td>Notification of Acceptance:</td>
+											<td>
+												<span style="color:blue">September 01, 2026</span>
+											</td>
+										</tr>
+										<tr>
+											<td>Submission Deadline for Revised Papers:</td>
+											<td>
+												<span style="color:blue">September 01, 2026</span>
+											</td>
+										</tr>
+										<tr>
+											<td>Registration Deadline:</td>
+											<td>
+												<span style="color:blue">September 01, 2026</span>
+											</td>
+										</tr>
+										<tr>
+											<td>Conference Date:</td>
+											<td><span style="color:blue">September 05, 2026</span></td>
+										</tr>
+									</table>
+									<p>
+									</p>
+
+								</div>
+							</div>
+						</div>
+						<div class="bhoechie-tab-content">
+							<div class="row">
+								<div class="text-center">
+									<h1><b>
+											<font color="red">Call for paper</font>
+										</b></h1>
+								</div>
+								<hr style="background: gray; border: 0; height: 3px" />
+								<p>
+									The 10th Euro-China Conference on Intelligent Data Analysis and Applications (<B>ECC
+										2026</B>) will be hosted by <b>Wuxi University</b> , <b>Wuxi</b>, <b>China</b>,
+									on <b>DATE</b>.
+									The venue location is the <b>Wuxi University, No.333 Xishan Avenue,</b> in Wuxi,
+									China.
+									The conference provides a forum for researchers, engineers, and scientists to
+									discuss information hiding, multimedia signal processing, the application of
+									artificial intelligence in multi-media and signal processing,
+									and information technology to exchange the latest research outcomes. Multimedia
+									technologies facilitate the creation of global information infrastructure for
+									acquiring, storing, and communicating data in different forms.
+									The proliferation of multimedia applications raises challenges such as multimedia
+									security and privacy, big data in multimedia, and intelligence in multimedia
+									processing.
+									This conference was established in Melbourne, Australia in 2005 and was subsequently
+									held in USA, Taiwan, Germany, China, Greece, Australia, Vietnam, Korea, and Japan
+									from 2006 to 2025. <br>
+
+								</p>
+
+								<ul class="list-group">
+									<li class="list-unstyled" style="font-weight: bold">
+										<ul class="list-group" style="margin-left: 15px"><B>Topics</B> of <B>ECC
+												2026</B> interest include, (but are not limited to) the following:
+											<li class="list-group-item">-Machine Learning</li>
+											<li class="list-group-item">-Signal Control (Wired & Wireless)</li>
+											<li class="list-group-item">-Information Hiding</li>
+											<li class="list-group-item">-Computational Intelligence</li>
+											<li class="list-group-item">-Knowledge-based Systems</li>
+											<li class="list-group-item">-Granular Computing</li>
+											<li class="list-group-item">-Intelligent Applications</li>
+											<li class="list-group-item">-Bioinformatics</li>
+											<li class="list-group-item">-Information Retrieval and Integration</li>
+											<li class="list-group-item">-Robotics and Control</li>
+											<li class="list-group-item">-Intelligent Control</li>
+											<li class="list-group-item">-Fuzzy Systems</li>
+											<li class="list-group-item">-Databases and Data Mining</li>
+											<li class="list-group-item">-Agents</li>
+											<li class="list-group-item">-Modeling and Visualization</li>
+											<li class="list-group-item">-Social Networking</li>
+											<li class="list-group-item">-Signal Analysis and Visualization</li>
+											<li class="list-group-item">-Web Intelligence</li>
+											<li class="list-group-item">-Signal Mining and Data Fusion</li>
+											<li class="list-group-item">-Cloud Computing</li>
+											<li class="list-group-item">-Multimedia Sensing and Sensory Systems</li>
+											<li class="list-group-item">-E-Learning</li>
+											<li class="list-group-item">-Watermarking</li>
+											<li class="list-group-item">-Expert Systems</li>
+											<li class="list-group-item">-Cryptography and Cryptanalysis</li>
+											<li class="list-group-item">-Other topics related to computer science</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="bhoechie-tab-content">
+							<div class="row">
+								<div class="text-center">
+									<h1><b>
+											<font color="red">Paper Submission</font>
+										</b></h1>
+								</div>
+								<hr style="background: gray; border: 0; height: 3px" />
+								<blockquote style="border: none;">
+									<p>Manuscripts should be provided according to the author guidelines given at the
+										link <a href="http://www.springer.com/series/8767"> author guidelines</a> where
+										you can find the necessary styles and information. The template for ECC 2026
+										follows the template <a
+											href="https://www.springer.com/gp/authors-editors/conference-proceedings/conference-proceedings-guidelines">Springer
+											template files</a> for the book series.
+									</p>
+									<p>The paper length is minum 10 pages for the regular paper. The template for ECC
+										2026 follows the same template for the book series: below.</p>
+									<p>Prospective authors are encouraged to submit a full paper for review before Sep
+										10, 2026, in PDF or Word format. Each paper should be written in English. Your
+										paper must be formatted according to the <a
+											href="https://www.springer.com/gp/authors-editors/conference-proceedings/conference-proceedings-guidelines">Springer
+											template files</a>.</p>
+									<p>For those who are not familiar with the CMT system, you can contact <a
+											href="mailto:struggle202109@163.com">struggle202109@163.com</a>.</p>
+
+									<span>
+										<h3>Instructions for Paper Submission:</h3>
+									</span>
+									<ul>
+										<li>We are pleased to announce that paper submission for ECC 2026 will be
+											managed through the Microsoft Conference Management Toolkit (CMT) system.
+											Kindly follow the instructions below to register and submit your paper.</li>
+									</ul>
+
+									<span>
+										<FONT color=black>&#9679;&nbsp;<b>Step 1: Register on CMT</FONT>:</b>
+									</span>
+									<p>Before submitting your paper, you must create an account on the CMT platform:</p>
+									<ol>
+										<li>Visit the CMT registration page: <a
+												href="https://cmt3.research.microsoft.com/">Register Here</a>.</li>
+										<li>Click on "Register" in the top-right corner of the page.</li>
+										<li>Fill in the required details, including your email address, name, and
+											affiliation.</li>
+										<li>Submit the registration form and verify your email to activate your account.
+										</li>
+									</ol>
+									<p>If you already have a CMT account, you can skip this step.</p>
+
+									<span>
+										<FONT color=black>&#9679;&nbsp;<b>Step 2: Submit Your Paper</FONT>:</b>
+									</span>
+									<p>Once registered, follow these steps to submit your paper:</p>
+									<ol>
+										<li>Log in to your CMT account.</li>
+										<li>Go to the ECC 2026 submission site: <a
+												href="https://cmt3.research.microsoft.com/ECC2026">Paper Submission
+												Link</a>.</li>
+										<li>Complete the required fields, upload your paper, and confirm your
+											submission.</li>
+									</ol>
+									<p>Please ensure that your submission adheres to the guidelines provided on the ECC
+										2026 conference website.</p>
+
+									<span>
+										<FONT color=black>&#9679;&nbsp;<b>Step 3: Registration</FONT>:</b>
+									</span>
+									<ol>
+										<li>
+											<strong>Registration Form:</strong>
+												<p>
+													Please complete your registration for ECC2026 by performing a bank wire transfer of <strong> $550 </strong> per paper no later than September 03, 2026 
+													to the following account:
+													<ul>
+														<li>Account Name: Wuxi Jiangnan International Travel Service Co., Ltd.</li>
+														<li>Account Number: 467670590309</li>
+														<li>Bank: Bank of China Wuxi Branch</li>
+														<li>Bank Address: 1st Floor, Bank of China Tower, No. 258 Zhongshan Road, </li>
+														<li>Liangxi District, Wuxi City</li>
+														<li>SWIFT Code: BKCHCNBJ95C</li>
+													</ul>
+													
+													and it is mandatory to include <strong> ECC2026 + [Your Paper ID] </strong> in the transfer memo/remarks to ensure your payment is correctly identified, after which you must finalize the process by submitting your <strong>Transaction ID / Reference Number</strong> via the <a href="https://forms.cloud.microsoft/r/7jrayH07Lu">
+													Registration Form</a>.
+												</p>
+											<p>The registration fee includes:</p>
+											<ul>
+												<li>Conference proceedings</li>
+												<li>Conference program guide</li>
+												<li>Access to all technical sessions</li>
+												<li>Lunches and dinners</li>
+												<li>Coffee breaks</li>
+												<li>Conference gifts</li>
+											</ul>
+											<p><em>Note:</em> Travel and lodging expenses are not included.</p>
+										</li>
+									</ol>
+									<p>Please fill out the registration form above.</p>
+
+
+								</blockquote>
+								<h3><b>
+										<font color="green">Publication</font>
+									</b></h3>
+								<blockquote style="border: none;">
+									<p>Notice:</p>
+									<ol>
+										<li> Accepted and presented papers will be published in the book series of Smart
+											Innovation, Systems and Technologies by Springer. Normally, papers in this
+											series are indexed by EI and Scopus.</li>
+										<img src="img/PaperPublication.png" alt="PaperPublication"
+											style="max-width: 400px;">
+										<li>The Microsoft CMT service was used for managing the peer-reviewing process
+											for this conference. This service was provided for free by Microsoft and
+											they bore all expenses, including costs for Azure cloud services as well as
+											for software development and support.</li>
+									</ol>
+							</div>
+						</div>
+
+
+						<div class="bhoechie-tab-content">
+							<div class="row">
+								<div class="text-center">
+									<h1><b>
+											<font color="green">Important Dates</font>
+										</b></h1>
+								</div>
+								<hr style="background: gray; border: 0; height: 3px" />
+								<table class="table" style="width: auto; font-family:Helvetica">
+									<tr>
+										<td>Full Paper Submission Deadline:</td>
+										<td>
+											<span style="color:blue">September 01, 2026</span>
+										</td>
+									</tr>
+									<tr>
+										<td>Notification of Acceptance:</td>
+										<td>
+											<span style="color:blue">September 01, 2026</span>
+										</td>
+									</tr>
+									<tr>
+										<td>Submission Deadline for Revised Papers:</td>
+										<td>
+											<span style="color:blue">September 01, 2026</span>
+										</td>
+									</tr>
+									<tr>
+										<td>Registration Deadline:</td>
+										<td>
+											<span style="color:blue">September 01, 2026</span>
+										</td>
+									</tr>
+									<tr>
+										<td>Conference Date:</td>
+										<td>
+											<span style="color:blue">September 04, 2026</span>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+
+						<div class="bhoechie-tab-content">
+
+							<div class="row">
+								<div class="text-center">
+									<h1><b>
+											<font color="green">Our Sponsors</font>
+										</b></h1>
+								</div>
+								<hr style="background: gray; border: 0; height: 3px" />
+								<ul class="table-condensed" style="font-size: large">
+									<li class="list-unstyled" style="margin: 20px">
+										<a href="https://web.cyut.edu.tw/bin/home.php?Lang=en" target="_blank">
+											<img src="img/vsb.jpeg" alt="" style="width: 120px" /></a>
+										VSB-Technical University of Ostrava
+									</li>
+									<li class="list-unstyled" style="margin: 20px">
+										<a href="https://isrc.asia.edu.tw/ssci/" target="_blank">
+											<img src="img/Wuxi University logo.png" alt="" style="width: 100px" /></a>
+										Wuxi University
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="bhoechie-tab-content">
+							<div class="row">
+								<div class="text-center">
+									<h1><b>
+											<font color="green">Organizing Committee</font>
+										</b></h1>
+								</div>
+								<hr style="background: gray; border: 0; height: 3px" />
+								<span class="CommitteeTitle">Honorary Chairs</span>
+								<ol>
+									<li class="list-unstyled">Jeng-Shyang Pan, Nanjing University of Information Science
+										& Technology, China</li>
+
+								</ol>
+
+								<span class="CommitteeTitle">Conference Founders</span>
+								<ol>
+									<li class="list-unstyled">Milan Adamek, Tomas Bata University in Zlin, Czech
+										Republic</li>
+								</ol>
+
+								<span class="CommitteeTitle">Program Committee Chairs</span>
+								<ol>
+									<li class="list-unstyled">Yanfei Sun (Wuxi University, China)</li>
+									<li class="list-unstyled">Yimu Ji (Nanjing University of Posts and
+										Telecommunications, China)</li>
+								</ol>
+
+								<span class="CommitteeTitle">Local Organizing Chair</span>
+								<ol>
+									<li class="list-unstyled">Ming Zhao (Wuxi University, China)</li>
+								</ol>
+
+								<span class="CommitteeTitle">Publication Chairs</span>
+								<ol>
+
+
+								</ol>
+
+								<span class="CommitteeTitle">TPC Members</span>
+								<ol>
+									<li class="list-unstyled">Wenjie Liu (Nanjing University of Information Science &
+										Technology, China)</li>
+									<li class="list-unstyled">Hongwei Sun (Heilongjiang University, China)</li>
+									<li class="list-unstyled">Binbin Cai (Fujian Normal University, China)</li>
+									<li class="list-unstyled">Shangdong Liu (Nanjing University of Posts and
+										Telecommunications, China)</li>
+									<li class="list-unstyled">Jing Sun (Nanjing University of Posts and
+										Telecommunications, China)</li>
+									<li class="list-unstyled">Haichang Yao (Nanjing Vocational University of Industry
+										Technology, China)</li>
+									<li class="list-unstyled">Kanghuai Liu (Nanyang Technological University, China)
+									</li>
+									<li class="list-unstyled">Zhiyu Chen (Xuzhou University of Technology, China)</li>
+									<li class="list-unstyled">Yujian Feng (Jiangsu University of Technology, China)</li>
+									<li class="list-unstyled">Shuai You (Wuhan University, China)</li>
+									<li class="list-unstyled">Yuyi Lin Li (Wenzhou University of Technology, China)</li>
+									<li class="list-unstyled">Yong Xu (Harbin Institute of Technology, China)</li>
+									<li class="list-unstyled">Guokun Zeng (Harbin Institute of Technology, China)</li>
+									<li class="list-unstyled">Yuwu Lu (South China Normal University, China)</li>
+									<li class="list-unstyled">Xindi Tong (Nanyang Technological University, Singapore)
+									</li>
+									<li class="list-unstyled">Haitao Yang (Huazhong University of Science and
+										Technology, China)</li>
+									<li class="list-unstyled">Tianming Song (Wuxi Vocational Institute of Science and
+										Technology, China)</li>
+									<li class="list-unstyled">Shengwei Yang (Kaixide Institute of Digital Technology,
+										China)</li>
+									<li class="list-unstyled">Honghui Zhan (Huazhong University of Science and
+										Technology, China)</li>
+									<li class="list-unstyled">Xun Che (Nanjing University of Science and Technology,
+										China)</li>
+									<li class="list-unstyled">Fei Huang (Nanjing AI Research Institute, Longshine
+										Technology Group, China)</li>
+									<li class="list-unstyled">Lang Zhou (Huazhong University of Science and Technology,
+										China)</li>
+									<li class="list-unstyled">Zhongliang Yang (Beijing University of Posts and
+										Telecommunications, China)</li>
+									<li class="list-unstyled">Varun Ojha (VSB-Technical University of Ostrava, Czech
+										Republic)</li>
+									<li class="list-unstyled">Vaclav Snasel (VSB-Technical University of Ostrava, Czech
+										Republic)</li>
+									<li class="list-unstyled">Roman Senkeric (Tomas Bata University in Zlin, Czech
+										Republic)</li>
+									<li class="list-unstyled">Jana Nowakova (VSB-Technical University of Ostrava, Czech
+										Republic)</li>
+									<li class="list-unstyled">Ivan Kotuliak (Slovak University of Technology, Slovak
+										Republic)</li>
+									<li class="list-unstyled">Pavel Kromer (VSB-Technical University of Ostrava, Czech
+										Republic)</li>
+									<li class="list-unstyled">Zdenko Bobovsky (VSB-Technical University of Ostrava,
+										Czech Republic)</li>
+									<li class="list-unstyled">Lingping Kong (VSB-Technical University of Ostrava, Czech
+										Republic)</li>
+									<li class="list-unstyled">Linlin Tang (Harbin Institute of Technology, Shenzhen,
+										China)</li>
+								</ol>
+
+							</div>
+						</div>
+						<div class="bhoechie-tab-content">
+							<div class="row">
+								<div class="text-center">
+									<h1><b>Keynote Speakers</b></h1>
+								</div>
+								<hr style="background: gray; border: 0; height: 3px" />
+								<table class="table table-bordered text-center">
+									<tbody>
+										<tr>
+											<td style="width: 40%;">
+												<img src="Keynote.jpg" alt="" class="img-rounded"
+													style="width: 50%;margin-top: 5%;" />
+												<label>
+													Wait
+												</label>
+												<label>
+													Wait
+												</label>
+											</td>
+											<td>
+												<p><b>None</b></p>
+												<hr />
+												<p></p>
+											</td>
+										</tr>
+									</tbody>
+
+									<tbody>
+										<tr>
+											<td style="width: 40%;">
+												<img src="Keynote/123.jpg" alt="" class="img-rounded"
+													style="width: 50%;margin-top: 5%;" />
+												<label>
+													Wait
+												</label>
+												<label>
+													None
+												</label>
+											</td>
+											<td>
+												<p><b>Wait</b></p>
+												<hr />
+												<p></p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="bhoechie-tab-content">
+							<div class="row">
+								<div class="text-center">
+									<h1><b>
+											<font color="green">Conference History</font>
+										</b></h1>
+								</div>
+								<hr style="background: gray; border: 0; height: 3px" />
+								<span class="CommitteeTitle">ECC 2024</span>
+								<ol>
+									<li class="list-unstyled">The 8th Euro-China Conference on Intelligent Data Analysis
+										and Applications (ECC 2024) was a successful event that brought together
+										researchers, professionals, and enthusiasts from around the world. Below are
+										some highlights from last year’s conference.</li>
+									<li class="list-unstyled">ECC2024 International Conference has been successfully
+										held in Xiamen China (2024.12.12)2024-12-12</li>
+								</ol>
+
+								<span class="CommitteeTitle">ECC 2025</span>
+								<ol>
+									<li class="list-unstyled">Milan Adamek, Tomas Bata University in Zlin, Czech
+										Republic</li>
+								</ol>
+							</div>
+						</div>
+						<div class="bhoechie-tab-content">
+							<div class="row">
+								<h1><span style="color:red"><b>Conference Venue</b></span></h1>
+								<br />
+								<!--<p>Under Construction...</p>-->
+								<p style="text-align:justify">
+									The conference ECC2026 will be held at <b>Wuxi University,<font color="green">
+											Binjiang Auditorium</font></a></b>, <b>Wuxi</b>, China.
+
+								</p>
+
+								<p>
+									<img src="img/VenueMap.png" class="img-response" />
+								</p>
+
+								<h3><span style="color:red">About Wuxi</span></h3>
+								<br />
+								<iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDruza7GdjKA4lxtVaZ-39mxaVks7d-rq0
                             &q=无锡市" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                            <p>
-                                &nbsp;&nbsp;Wuxi, known as the "Pearl of Taihu Lake", is a renowned national historical and cultural city with a history stretching back more than 3,000 years. As one of the birthplaces of Wu Culture, it has nurtured profound traditions, elegant aesthetics, and outstanding figures throughout history.
-Located in the prosperous Yangtze River Delta, Wuxi enjoys a superior geographical location, connecting the Yangtze River in the north and facing Taihu Lake in the south. It is a dynamic modern city that perfectly integrates profound cultural heritage, beautiful natural scenery, and advanced industrial development.
-Wuxi boasts world-famous scenic spots: the picturesque Yuantouzhu, the magnificent Lingshan Grand Buddha, the time-honored Huishan Ancient Town, and the charming Grand Canal Historic District. It is not only a famous land of fish and rice but also an important economic, technological and cultural city in eastern China.
-Today, Wuxi stands as a city of openness, vitality and charm, welcoming friends from all over the world.
-                            </p>
-                        </div>
-                    </div>
-					<div class="bhoechie-tab-content">
-					    <div class="row">
-					        <div class="text-center">
-					            <h1><b><font color="green">Conference Program</font></b></h1>
-					        </div>
-					        <hr style="background: gray; border: 0; height: 3px" />
-					        <h2>Conference Guidebook</h2>
-					        <a href="https://eurochinaconference.github.io/ECC2025/book.pdf" class="download-link">Click to Download</a>
-					        
-					           
-					         <h2>Conference Program</h2>
-					            <h3>September  21, 2026 </h3> GMT+02:00, Central European Time - Prague
-					            <table>
-					                <tr><th>Time</th><th>Event</th><th>Location</th></tr>
-					           <p><strong>Conference Chair:</strong> Prof. </p>
-					                <tr><td>09:30 - 10:00</td><td>Registration (Coffee Break)</td><td>ADDRESS</td></tr>
-					                <tr><td>10:00 - 10:30</td><td>Opening Ceremony</td><td>ADDRESS</td></tr>
-					                <tr><td>10:30 - 11:00</td><td>Coffee Break</td><td>ADDRESS</td></tr>
-					                <tr><td>11:00 - 12:00</td><td><strong>Keynote Speech (I): Prof. Christian Blum</strong></td><td>ADDRESS</td></tr>		
-					                <tr><td>12:00 - 13:00</td><td>Lunch</td><td>ADDRESS</td></tr>
-					                <tr><td>13:00 - 15:00</td><td>On-Site Session A01</td><td>ADDRESS</td></tr>
-					            <tr><td>13:00 - 17:30</td><td>Online Session A01-A02</td><td>ADDRESS</td></tr>
-					            <tr><td>Online Presentation</td><td>Tencent/VooV Meeting <a href="https://voovmeeting.com/dm/tLX4TDMyBgge" target="_blank">Meeting Link</a> </td><td> <a href="#page-instruction" class="bottom-link">Go to VOOV instructions</a></td> </tr>	
-					                
-					                <tr><td>15:00 - 15:30</td><td>Coffee Break</td><td>ADDRESS</td></tr>
-					                <tr><td>15:30 - 17:30</td><td>On-Site Session A02</td><td>ADDRESS</td></tr>
-					                <tr><td>17:30 - 18:00</td><td>Gathering</td><td>ADDRESS</td></tr>
-					                <tr><td>18:00</td><td>Dinner</td><td>ADDRESS</td></tr>
-					            </table>
-					        
-					        
-					            <h3>September  22, 2026 </h3>
-					         <div id="page-middle"></div>
-					            <table>
-					                <tr><th>Time</th><th>Event</th><th>Location</th></tr>
-					            <p><strong>Conference Chair:</strong> Prof</p>	
-					            <tr><td>09:00 - 09:30</td><td>Registration & Coffee break</td><td>ADDRESS</td></tr>
-					                <tr><td>09:30 - 10:30</td><td><strong>Keynote Speech (II): Prof. Xin Yao</strong></td><td>ADDRESS</td></tr>
-					                <tr><td>10:30 - 11:00</td><td>Coffee Break</td><td>ADDRESS</td></tr>
-					                <tr><td>11:00 - 12:00</td><td><strong>Keynote Speech (III): Prof. Varun Ojha</strong></td><td>ADDRESS</td></tr>
-					                <tr><td>12:00 - 13:00</td><td>Lunch</td><td>ADDRESS</td></tr>
-					                    <tr><td>13:00 - 15:00</td><td>Online Session B01</td><td>ADDRESS</td></tr>        
-					        	<tr><td>15:00 - 15:30</td><td>Coffee Break</td><td>ADDRESS</td></tr>
-					                <tr><td>15:30 - 17:30</td><td>Online Session B02</td><td>ADDRESS</td></tr>
-					            <tr><td>Online Presentation</td><td>ADDRESS</a></td></tr>	
-					                <tr><td>17:30 - 18:00</td><td>Gathering</td><td>ADDRESS</td></tr>
-					                <tr><td>18:00</td><td>Dinner</td><td>ADDRESS </td></tr>
-					            </table>
-					    </div>
+								<p>
+									&nbsp;&nbsp;Wuxi, known as the "Pearl of Taihu Lake", is a renowned national
+									historical and cultural city with a history stretching back more than 3,000 years.
+									As one of the birthplaces of Wu Culture, it has nurtured profound traditions,
+									elegant aesthetics, and outstanding figures throughout history.
+									Located in the prosperous Yangtze River Delta, Wuxi enjoys a superior geographical
+									location, connecting the Yangtze River in the north and facing Taihu Lake in the
+									south. It is a dynamic modern city that perfectly integrates profound cultural
+									heritage, beautiful natural scenery, and advanced industrial development.
+									Wuxi boasts world-famous scenic spots: the picturesque Yuantouzhu, the magnificent
+									Lingshan Grand Buddha, the time-honored Huishan Ancient Town, and the charming Grand
+									Canal Historic District. It is not only a famous land of fish and rice but also an
+									important economic, technological and cultural city in eastern China.
+									Today, Wuxi stands as a city of openness, vitality and charm, welcoming friends from
+									all over the world.
+								</p>
+							</div>
+						</div>
+						<div class="bhoechie-tab-content">
+							<div class="row">
+								<div class="text-center">
+									<h1><b>
+											<font color="green">Conference Program</font>
+										</b></h1>
+								</div>
+								<hr style="background: gray; border: 0; height: 3px" />
+								<h2>Conference Guidebook</h2>
+								<b href="https://eurochinaconference.github.io/ECC2025/book.pdf"
+									class="download-link">Wait</b>
+
+
+								<h2>Conference Program</h2>
+								<h3>September 05, 2026 </h3> GMT+08:00, Central European Time - Prague
+								<table>
+									<tr>
+										<th>Time</th>
+										<th>Event</th>
+										<th>Location</th>
+									</tr>
+									<p><strong>Conference Chair:</strong> Prof. </p>
+									<tr>
+										<td>09:30 - 10:00</td>
+										<td>Registration (Coffee Break)</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>10:00 - 10:30</td>
+										<td>Opening Ceremony</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>10:30 - 11:00</td>
+										<td>Coffee Break</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>11:00 - 12:00</td>
+										<td><strong>Keynote Speech (I): Prof. Christian Blum</strong></td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>12:00 - 13:00</td>
+										<td>Lunch</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>13:00 - 15:00</td>
+										<td>On-Site Session A01</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>13:00 - 17:30</td>
+										<td>Online Session A01-A02</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>Online Presentation</td>
+										<td>Tencent/VooV Meeting <a href="https://voovmeeting.com/dm/tLX4TDMyBgge"
+												target="_blank">Meeting Link</a> </td>
+										<td> <a href="#page-instruction" class="bottom-link">Go to VOOV instructions</a>
+										</td>
+									</tr>
+
+									<tr>
+										<td>15:00 - 15:30</td>
+										<td>Coffee Break</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>15:30 - 17:30</td>
+										<td>On-Site Session A02</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>17:30 - 18:00</td>
+										<td>Gathering</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>18:00</td>
+										<td>Dinner</td>
+										<td>ADDRESS</td>
+									</tr>
+								</table>
+
+
+								<h3>September 06, 2026 </h3>
+								<div id="page-middle"></div>
+								<table>
+									<tr>
+										<th>Time</th>
+										<th>Event</th>
+										<th>Location</th>
+									</tr>
+									<p><strong>Conference Chair:</strong> Prof</p>
+									<tr>
+										<td>09:00 - 09:30</td>
+										<td>Registration & Coffee break</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>09:30 - 10:30</td>
+										<td><strong>Keynote Speech (II): Prof. Xin Yao</strong></td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>10:30 - 11:00</td>
+										<td>Coffee Break</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>11:00 - 12:00</td>
+										<td><strong>Keynote Speech (III): Prof. Varun Ojha</strong></td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>12:00 - 13:00</td>
+										<td>Lunch</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>13:00 - 15:00</td>
+										<td>Online Session B01</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>15:00 - 15:30</td>
+										<td>Coffee Break</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>15:30 - 17:30</td>
+										<td>Online Session B02</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>Online Presentation</td>
+										<td>ADDRESS</a></td>
+									</tr>
+									<tr>
+										<td>17:30 - 18:00</td>
+										<td>Gathering</td>
+										<td>ADDRESS</td>
+									</tr>
+									<tr>
+										<td>18:00</td>
+										<td>Dinner</td>
+										<td>ADDRESS </td>
+									</tr>
+								</table>
+							</div>
+						</div>
 					</div>
-                </div>
-            </div>
+				</div>
 
-            <hr style="background: #0563C1; border: 0; height: 3px" />
+				<hr style="background: #0563C1; border: 0; height: 3px" />
 
-            <div class="row text-center footerlogo" style="margin-bottom: 30px">
-                <div class="col-md-12">
-                <a href="https://aict.nkust.edu.tw/digitrans/" target="_blank">
-                        <img src="Logo\9-digitrans.png" alt=""  class="fimg" /></a>
+				<div class="row text-center footerlogo" style="margin-bottom: 30px">
+					<div class="col-md-12">
+						<a href="https://aict.nkust.edu.tw/digitrans/" target="_blank">
+							<img src="Logo\9-digitrans.png" alt="" class="fimg" /></a>
 
-                </div>
-        
-            </div>
+					</div>
 
-        </div>
-    </form>
-</body>
+				</div>
+
+			</div>
+		</form>
+	</body>
 </html>
